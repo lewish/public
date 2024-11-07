@@ -1,0 +1,1646 @@
+{
+  "007bbfb7": {
+    "description": "Scale the input grid in both axes by 3 to produce a 9x9 grid, then replace each 3x3 solid colored non-background square with the original input grid.",
+    "tags": [
+      "transformation:scaling",
+      "transformation:copy",
+      "object:irregular"
+    ]
+  },
+  "00d62c1b": {},
+  "017c7c7b": {},
+  "025d127b": {
+    "description": "The grid contains possibly multiple single colored irregular shapes, which themselves are composed of a bottom \"L\" section that is a straight horizontal line with a single cell above it on the right end of the line and then the rest of the cells. Move all cells that are not part of the \"L\" to the right by 1.",
+    "tags": ["transformation:translation", "concept:novel-properties"]
+  },
+  "045e512c": {},
+  "0520fde7": {},
+  "05269061": {},
+  "05f2a901": {
+    "description": "Move the green irregular object either horizontally or vertically only (depending on which direction will result in them touching), towards the grey square until the objects are touching.",
+    "tags": [
+      "procedure:agentic-program",
+      "transformation:translation",
+      "concept:relative-position",
+      "concept:adjacency"
+    ]
+  },
+  "06df4c85": {
+    "description": "Between any two vertically or horizontally aligned 2x2 squares of the same color, change the color of all 2x2 color 0 squares between them to the same color.",
+    "tags": [
+      "object:grid-layouts",
+      "object:rectangle",
+      "concept:relative-position",
+      "procedure:for-each",
+      "procedure:search"
+    ]
+  },
+  "08ed6ac7": {
+    "description": "For each vertical purple line in the input, recolor the shortest line yellow, the next shortest red, then green, and then the longest line blue.",
+    "tags": [
+      "procedure:ordering",
+      "concept:counting",
+      "object:line",
+      "transformation:recolor"
+    ]
+  },
+  "09629e4f": {},
+  "0962bcdd": {},
+  "0a938d79": {
+    "description": "For each single colored cell, draw a line from the edge it touches to the opposing edge, then take the bounding rectangle of these two lines and repeat it to the right if the lines are vertical and downwards if the lines are horizontal, with a gap between each copy of N-2 cells where N is the width or height of the rectangles shortest side.",
+    "tags": [
+      "invariance:orientation",
+      "object:line",
+      "transformation:draw-lines"
+    ]
+  },
+  "0b148d64": {
+    "description": "Identify the 4 discontinuous objects of the same color that are not 0 valued, find the one which is a different color from the others and copy it to a grid of the same size as its bounding rectangle.",
+    "tags": [
+      "transformation:copy",
+      "concept:counting",
+      "procedure:search",
+      "object:irregular"
+    ]
+  },
+  "0ca9ddb6": {
+    "description": "Fill in the 4 corner cells around any green cell yellow, fill in the 4 edge cells around any blue cell orange, and keep any other colored cells as is.",
+    "tags": ["procedure:convolutional-program"]
+  },
+  "0d3d703e": {
+    "description": "Change the colors of the cells with the following mapping: red > yellow, blue > purple, green > teal, grey > cyan, teal > green, cyan > grey.",
+    "tags": ["procedure:convolutional-program", "other:multi-sample-mapping"]
+  },
+  "0dfd9992": {},
+  "0e206a2e": {},
+  "10fcaaa3": {
+    "description": "Double the width and height of the input, copying the input shape to each of the 4 quadrants of the new grid, then for each colored pixel in the new grid, add a grey cell in each diagonal corner from the colored cell.",
+    "tags": ["transformation:copy", "procedure:convolutional-program"]
+  },
+  "11852cab": {
+    "description": "Take the top left 3x3 square of the rectangle that contains all non-background cells, flip it horizontally and copy it to the right with a single vertical line of overlap, then flip the 5x3 rectangle created by this downward, again with a single horizontal line of overlap, in order to complete the pattern.",
+    "tags": [
+      "transformation:flipping",
+      "object:irregular",
+      "object:multicolor",
+      "procedure:alignment"
+    ]
+  },
+  "1190e5a7": {},
+  "137eaa0f": {},
+  "150deff5": {},
+  "178fcbfb": {
+    "description": "Extend any single green cells into a vertical line from top to bottom, then for any blue or red cells extend them into horizontal lines from left to right, overwriting any green line cells.",
+    "tags": [
+      "object:line",
+      "procedure:agentic-program",
+      "procedure:for-each",
+      "transformation:draw-lines",
+      "transformation:layering"
+    ]
+  },
+  "1a07d186": {},
+  "1b2d62fb": {
+    "description": "The input is made of two 3x5 rectangles separated by a vertical blue line. Output a 3x5 grid where each cell is gey if the corresponding positions in each of the rectangles from the input are both color 0, otherwise output color 0.",
+    "tags": [
+      "transformation:layering",
+      "object:grid-layouts",
+      "procedure:convolutional-program"
+    ]
+  },
+  "1b60fb0c": {
+    "description": "Identify the shape that has been rotated 2 times 90 degrees around a fixed point to construct the overall input, and rotate that shape again around the rotation point to fill out the missing direction, instead change the color of all cells to green and not coloring over any of the existing non background cells.",
+    "tags": [
+      "transformation:rotation",
+      "object:irregular",
+      "transformation:layering"
+    ]
+  },
+  "1bfc4729": { "description": "", "tags": [] },
+  "1c786137": {},
+  "1caeab9d": {},
+  "1cf80156": {
+    "description": "Find the single colored shape, and extract its bounding rectangle as the output.",
+    "tags": ["object:irregular", "transformation:copy"]
+  },
+  "1e0a9b12": {
+    "description": "Move each cell down to the bottom as if it were affected by gravity, moving each pixel down until it gets to the bottom or is obstructed by another non-zero cell from moving further, and until no such moves can be made for any pixel. Alternatively, count the number of cells in each column and draw a line up from the bottom of that color.",
+    "tags": ["procedure:agentic-program", "transformation:translation"]
+  },
+  "1e32b0e9": {
+    "description": "The grid is divided into 9 4x4 squares separated by lines of color c, with some containing a single colored shape inside them. Take the top left single color shape, convert it to color c, copy it to the center of each of the 9 squares but not overriding any cells already set to non-zero values.",
+    "tags": [
+      "transformation:layering",
+      "transformation:copy",
+
+      "object:grid-layouts",
+      "object:irregular"
+    ]
+  },
+  "1f0c79e5": {
+    "description": "Find the multi-colored cube, identify the non-green color, fill the cube with that color then repeatedly draw the cube in each diagonal direction that was originally green in the cube until the edge of the grid.",
+    "tags": [
+      "procedure:agentic-program",
+      "transformation:translation",
+      "object:multicolor",
+      "concept:novel-properties"
+    ]
+  },
+  "1f642eb9": {},
+  "1f85a75f": {
+    "description": "Extract the bounding rectangle of the largest single color irregular object as the output.",
+    "tags": ["procedure:search", "object:irregular", "transformation:copy"]
+  },
+  "1f876c06": {
+    "description": "Draw a diagonal line between any two individual cells that are the same color as each other and align either down-right diagonally or down-left diagonally.",
+    "tags": [
+      "procedure:agentic-program",
+      "procedure:search",
+      "object:irregular",
+      "concept:relative-position",
+      "object:diagonal-lines",
+      "transformation:draw-lines"
+    ]
+  },
+  "1fad071e": {
+    "description": "The output is a grid of width 5 and height one, with the first N cells from the left colored blue and the rest 0, where N is the number of 2x2 blue squares in the input grid.",
+    "tags": ["object:rectangle", "concept:counting"]
+  },
+  "2013d3e2": {},
+  "2204b7a8": {
+    "description": "Each single non background cell is colored the same as the color of the closest line.",
+    "tags": [
+      "object:line",
+      "concept:relative-position",
+      "transformation:recolor"
+    ]
+  },
+  "22168020": {
+    "description": "Identify objects of a Y shape, made of a square with two diagonal lines (arms) emerging from the top left and top right corners. Fill in between the arms with the same color.",
+    "tags": ["transformation:filling", "object:irregular"]
+  },
+  "22233c11": {
+    "description": "For any pair of red rectangles that are the same size and diagonally adjacent, compute the bounding box of their combined shape, then place a pair of grey rectangles of the same size outside the corners of the bounding box, using the top-left/bottom-right corners if the squares were originally top-right/bottom-left diagonal from each other, otherwise vice versa.",
+    "tags": ["invariance:scale", "object:irregular"]
+  },
+  "2281f1f4": {},
+  "228f6490": {
+    "description": "The grid contains purple toroidal shapes with a missing internal shape. For any other shapes of a different color that match the internal shape, move them into the internal shape, and replace their original cells with color 0.",
+    "tags": [
+      "procedure:search",
+      "concept:containment",
+      "concept:topology",
+      "transformation:translation",
+      "object:rectangle",
+      "object:irregular"
+    ]
+  },
+  "22eb0ac0": {},
+  "234bbc79": {},
+  "23581191": {
+    "description": "Draw a vertical and horizontal line out from the grey cell to the edges of the grid, then do the same for the orange cell but if the line will overlap any grey line already drawn, change the cell color to green.",
+    "tags": [
+      "object:line",
+      "procedure:agentic-program",
+      "transformation:draw-lines",
+      "transformation:layering"
+    ]
+  },
+  "239be575": {},
+  "23b5c85d": {},
+  "253bf280": {
+    "description": "Draw a straight horizontal or vertical red line between any two grey cells that align either horizontally or vertically.",
+    "tags": ["object:line", "transformation:draw-lines"]
+  },
+  "25d487eb": {},
+  "25d8a9c8": {
+    "description": "For each row in the grid, if the row is all of a single color, fill that row with purple, otherwise fill the row with 0.",
+    "tags": ["object:line", "transformation:copy", "transformation:recolor"]
+  },
+  "25ff71a9": {
+    "description": "Shift all non 0 cells y position down by 1 and filling the top row cells with value 0.",
+    "tags": ["transformation:translation", "procedure:convolutional-program"]
+  },
+  "264363fd": {
+    "description": "The grid is formed of multiple colored rectangles with single colored cells inside them, and one irregular multi-colored object with a central cell that is the same color as the single cells in the rectangles. Copy the irregular object onto each of those cells in the rectangles, but not extending it outside the bounds of the containing rectangle. Then from the center of each newly placed irregular object, in each direction if there are two consecutive cells of the same color, extend the line they form to the edge of the containing rectangle.",
+    "tags": [
+      "transformation:copy",
+      "object:rectangle",
+      "object:irregular",
+      "object:multicolor",
+      "concept:containment",
+      "procedure:agentic-program",
+      "transformation:layering",
+      "transformation:draw-lines"
+    ]
+  },
+  "272f95fa": {
+    "description": "The input grid is made of 9 - 0 colored rectangles in an irregular grid separated by grey lines. The top middle rectangle is changed to green, middle left to yellow, middle middle to teal, middle right to red, and bottom middle to blue.",
+    "tags": [
+      "object:rectangle",
+      "concept:relative-position",
+      "transformation:recolor",
+      "object:grid-layouts"
+    ]
+  },
+  "27a28665": {},
+  "28bf18c6": {},
+  "28e73c20": {
+    "description": "Starting from the top left and going right, draw a red line until the edge of the maze or until there is a red cell 2 cells in front of the end of the line, at which point rotate 90 degrees anti-clockwise and repeat until no more line can be drawn.",
+    "tags": ["procedure:agentic-program", "transformation:rotation"]
+  },
+  "29623171": {},
+  "29c11459": {},
+  "29ec7d0e": {
+    "description": "Infer the pattern which is broadly a grid of blue lines horizontally and vertically, and a repeated fixed pattern of multi colored squares between the grid lines, and fill in the missing parts of the pattern which have cell values 0.",
+    "tags": ["other:pattern-completion", "object:line", "object:grid-layouts"]
+  },
+  "2bcee788": {},
+  "2bee17df": {
+    "description": "For any possible rectangle that can overlap only background cells and has a height 2 less than the grid height, or a width 2 less than the grid width, fill that rectangle in red.",
+    "tags": [
+      "object:rectangle",
+      "procedure:search",
+      "transformation:filling",
+      "concept:novel-properties"
+    ]
+  },
+  "2c608aff": {
+    "description": "The input is formed of a larger rectangle and multiple single colored cells of a different color. For each colored cell, draw a line from it to the larger rectangle only if the line will touch, i.e the cell lines between either the left and right edges of the rectangle or the top and bottom edges, leave all other cells as is.",
+    "tags": [
+      "concept:adjacency",
+      "object:line",
+      "object:rectangle",
+      "concept:relative-position",
+      "procedure:agentic-program",
+      "procedure:for-each",
+      "invariance:orientation",
+      "transformation:draw-lines"
+    ]
+  },
+  "2dc579da": {
+    "description": "The grid is divided into 4 squares of the same color separated by lines of a different color. Identify the square with a single differently colored cell inside it, copy that square to the output.",
+    "tags": [
+      "procedure:search",
+      "transformation:copy",
+      "object:rectangle",
+      "concept:containment",
+      "object:multicolor",
+      "object:grid-layouts",
+      "concept:novel-properties"
+    ]
+  },
+  "2dd70a9a": {
+    "description": "Find the 2 adjacent red cells, and start drawing a straight red line with the same orientation as the two red cells in the direction of the 2 adjacent green cells, or if direction is ambiguous, go in the direction that will eventually meet a grey cell. When encountering a grey cell, change the direction of the line again towards the green cells along the other axis, and repeat this one more time until hitting the green cells.",
+    "tags": [
+      "procedure:search",
+      "procedure:agentic-program",
+      "object:line",
+      "transformation:draw-lines"
+    ]
+  },
+  "2dee498d": {},
+  "31aa019c": {
+    "description": "Find the color of which there is only a single cell of that color, then draw a outline around that cell with the color that only appears in 2 cells in the input, then replace all cells not in the 3x3 outline or the single colored cell with color 0.",
+    "tags": ["concept:counting", "procedure:search"]
+  },
+  "321b1fc6": {},
+  "32597951": {
+    "description": "Find the smallest rectangle that contains all the grey cells in the grid, then change each blue cell within this rectangle to red.",
+    "tags": [
+      "concept:containment",
+      "object:overlapping",
+      "transformation:recolor"
+    ]
+  },
+  "3345333e": {
+    "description": "The input contains a horizontally symmetrical pattern and a single colored solid rectangle that obscures it. Remove the rectangle, and complete the pattern by flipping the cells from the unobscured half of the pattern.",
+    "tags": [
+      "transformation:flipping",
+      "object:rectangle",
+      "object:irregular",
+      "other:pattern-completion",
+      "concept:symmetry"
+    ]
+  },
+  "3428a4f5": {},
+  "3618c87e": {
+    "description": "Move any blue cell down 2 vertically, overwriting any existing cells, and replacing its original position with a cell of value 0.",
+    "tags": ["transformation:translation"]
+  },
+  "3631a71a": {
+    "description": "Identify the color of the largest rectangles to determine the masked pixels, then replace these pixels with the correct value from the pattern, using any non masked pixel value from another reflected quadrant of the pattern.",
+    "tags": [
+      "other:pattern-completion",
+      "transformation:flipping",
+      "object:rectangle"
+    ]
+  },
+  "363442ee": {
+    "description": "Copy the 3x3 shape in the top left of the input to align on top of any single blue cells on the right, such that the blue cell is in the middle of the 3x3 shape.",
+    "tags": ["transformation:copy", "object:multicolor", "procedure:alignment"]
+  },
+  "36d67576": {},
+  "36fdfd69": {},
+  "3906de3d": {
+    "description": "Split all the green objects into single width vertical lines, then for each line move it upwards to the farthest point it can go without overlapping any of the existing blue cells.",
+    "tags": [
+      "concept:adjacency",
+      "procedure:agentic-program",
+      "object:line",
+      "procedure:for-each",
+      "transformation:translation"
+    ]
+  },
+  "39a8645d": {},
+  "39e1d7f9": {
+    "description": "The grid is made of many squares of varying sizes and colors, separated by lines of a different color. Find the complete pattern that is made up of up to 9 larger squares and at least 2 colors all adjacent, and copy this larger pattern wherever there is a square of the same central square color.",
+    "tags": [
+      "procedure:convolutional-program",
+      "object:grid-layouts",
+      "object:overlapping",
+      "transformation:copy",
+      "procedure:alignment"
+    ]
+  },
+  "3aa6fb7a": {},
+  "3ac3eb23": {
+    "description": "For each non background cell, draw a fixed pattern starting at that spot and repeating below it of the same color as the cell, where the 1st and every odd numbered row below is just the same single cell, and every even row is two cells of the same color either side of the original cell.",
+    "tags": ["procedure:agentic-program"]
+  },
+  "3af2c5a8": {},
+  "3bd67248": {},
+  "3bdb4ada": {
+    "description": "Replace the central row of any 3 height rectangular object with alternating cell values that start with the color of the rectangle followed by 0.",
+    "tags": ["object:rectangle", "other:pattern-completion"]
+  },
+  "3befdf3e": {},
+  "3c9b0459": {
+    "description": "Rotate the input grid 180 degrees.",
+    "tags": ["transformation:rotation"]
+  },
+  "3de23699": {
+    "description": "Find the 4 cells that mark the corners of a rectangle, where there should only be 4 cells of that color. Copy the inside of the rectangle (excluding the outer edge) they mark out as the output and change the color of each non-zero cell inside it to the color of the cells that mark the rectangle corners.",
+    "tags": ["object:rectangle", "object:outline", "other:data-dependent-grid"]
+  },
+  "3e980e27": {
+    "description": "Find the multi-colored object with a single red cell and connected cells of another color, and copy this object so that it overlaps any other single red cells in the input with their red cells aligning, then for the multi-colored object with a single green cell, horizontally flip this object then copy it so it overlaps any single green cells.",
+    "tags": [
+      "transformation:flipping",
+      "object:irregular",
+      "object:multicolor",
+      "transformation:copy"
+    ]
+  },
+  "3eda0437": {},
+  "3f7978a0": {
+    "description": "Find the rectangle marked by 4 grey corner cells with two purple edges on the left and right edges, and copy the entire rectangle and its contents to a grid of the same size as the output.",
+    "tags": [
+      "object:irregular",
+      "object:rectangle",
+      "transformation:copy",
+      "object:line",
+      "procedure:search"
+    ]
+  },
+  "40853293": {},
+  "4093f84a": {},
+  "41e4d17e": {
+    "description": "Find the square outline shapes, and from the center cell of each of these squares, draw a vertical and horizontal line extending to the edge of the grid, but not overwriting the cells with the color of the outline rectangle.",
+    "tags": [
+      "transformation:layering",
+      "object:line",
+      "procedure:agentic-program",
+      "object:outline",
+      "transformation:draw-lines",
+      "procedure:for-each"
+    ]
+  },
+  "4258a5f9": {},
+  "4290ef0e": {
+    "description": "Identify the several disconnected, same colored objects that have cell values only on the edge of the outline of a perfect square (which may also be 1x1) and are symmetrical in both axes and may extend beyond the edge of the input grid. The output grid has the size of the largest such outline, and its background color is the same as the background (most common) color of the input grid. Each of the identified outline shapes is copied into the output grid and centered in the middle.",
+    "tags": [
+      "object:irregular",
+      "object:outline",
+      "other:data-dependent-grid",
+      "concept:symmetry"
+    ]
+  },
+  "42a50994": {},
+  "4347f46a": {
+    "description": "For each colored rectangle in the grid, remove its center, resetting the color to 0 for all cells, so that each rectangle becomes just a single width outline of its original shape.",
+    "tags": [
+      "object:rectangle",
+      "object:outline",
+      "procedure:convolutional-program"
+    ]
+  },
+  "444801d8": {
+    "description": "For each blue outline with a colored pixel in it, fill the inside of the outline with the same color as the pixel inside it, as well as the single pixel gap in the outline, and along the edge of the resulting rectangle with the hole in it, draw a a single pixel width line along and next to that edge the same width/height as the rectangle.",
+    "tags": [
+      "transformation:filling",
+      "object:irregular",
+      "object:outline",
+      "object:multicolor",
+      "concept:containment",
+      "object:rectangle",
+      "concept:relative-position"
+    ]
+  },
+  "445eab21": {
+    "description": "Find the largest rectangular outline object, and output a 2x2 grid with all cells the color of the largest object.",
+    "tags": [
+      "object:outline",
+      "procedure:search",
+      "concept:size",
+      "concept:max-min"
+    ]
+  },
+  "447fd412": {},
+  "44d8ac46": {},
+  "44f52bb0": {},
+  "4522001f": {},
+  "4612dd53": {},
+  "46442a0e": {
+    "description": "The input grid is rotated around the bottom right corner of the input grid 3 times each at 90 degrees, resulting in a grid 2x the width and height of the original.",
+    "tags": ["transformation:rotation"]
+  },
+  "469497ad": {
+    "description": "Scale the input grid by N where N is the number of unique colors in the input (ignoring the background / 0). For the square that is produced that is only adjacent to the grid edge or to 0 valued cells, draw a green diagonal line out from each corner, until it meets a non zero cell.",
+    "tags": [
+      "transformation:scaling",
+      "concept:counting",
+      "procedure:agentic-program",
+      "object:diagonal-lines",
+      "transformation:draw-lines"
+    ]
+  },
+  "46f33fce": {},
+  "47c1f68c": {},
+  "484b58aa": {},
+  "48d8fb45": {
+    "description": "Find the 2 colored object with a single pink cell as part of it, and extract the 3x3 bounding square that includes the non-pink cells.",
+    "tags": [
+      "procedure:search",
+      "object:multicolor",
+      "object:irregular",
+      "transformation:copy",
+      "concept:adjacency",
+      "concept:size"
+    ]
+  },
+  "4938f0c2": {},
+  "496994bd": {
+    "description": "Copy and vertically flip the top half of the grid and place it at the bottom of the grid.",
+    "tags": ["transformation:flipping"]
+  },
+  "49d1d64f": {
+    "description": "Expand the grid by 1 in each direction. Each new corner cell is zero, and each edge cell value is copied from the cell value that was originally the edge of the previous grid next to it.",
+    "tags": ["transformation:copy"]
+  },
+  "4be741c5": {
+    "description": "The input is made of N single color continuous but irregular shapes that are aligned vertically or horizontally. The output is a number of cells equal to the number of shapes in the input, with each output cell representing the color of that shape, and aligned in the same direction as the shapes in the input such that the output is either 1xN or Nx1.",
+    "tags": [
+      "other:data-dependent-grid",
+      "concept:relative-position",
+      "object:irregular"
+    ]
+  },
+  "4c4377d9": {
+    "description": "Double the height of the grid upwards, and vertically flip and copy the input up to the new pixels.",
+    "tags": ["transformation:flipping", "transformation:copy"]
+  },
+  "4c5c2cf0": {},
+  "50846271": {
+    "description": "The input contains green symmetrical cross/plus-sign shaped objects that are partially obscured by pink cells, find the maximum width and height of any of these shapes to determine the true cross shape and a size, then layer this shape over any of the partial cross shapes in the input so that it aligns, leaving any green cells as is and changing the color of pink cells it overlaps to grey.",
+    "tags": [
+      "object:irregular",
+      "object:line",
+      "procedure:for-each",
+      "procedure:alignment",
+      "transformation:layering",
+      "transformation:recolor",
+      "concept:max-min"
+    ]
+  },
+  "508bd3b6": {},
+  "50cb2852": {
+    "description": "For each single colored rectangle, change the color of all internal (non edge or corner) cells to be grey.",
+    "tags": [
+      "procedure:convolutional-program",
+      "object:rectangle",
+      "object:outline"
+    ]
+  },
+  "5117e062": {
+    "description": "Find the single grey pixel, change it to the non-background color adjacent to it, and extract the 3x3 square around it as the output.",
+    "tags": ["object:multicolor", "procedure:search"]
+  },
+  "5168d44c": {},
+  "539a4f51": {
+    "description": "The input has a pattern starting from one corner made of successively larger corner line segments of different colors. Extend the pattern to fill a grid that is twice the width and height of the input grid, and don't consider any zero valued cells as part of the pattern to extend in the input.",
+    "tags": [
+      "other:pattern-completion",
+      "object:line",
+      "object:outline",
+      "transformation:scaling"
+    ]
+  },
+  "53b68214": {
+    "description": "Expand the grid downwards so that its height becomes the same as it's width (10), and then infer and extend the simple pattern into the new cells.",
+    "tags": ["other:pattern-completion", "procedure:agentic-program"]
+  },
+  "543a7ed5": {
+    "description": "For each object, if it has a cavity then fill any internal cells inside the cavity yellow, then for all objects draw a red single width outline around the exterior of the rectangle.",
+    "tags": [
+      "object:outline",
+      "object:rectangle",
+      "concept:containment",
+      "concept:topology"
+    ]
+  },
+  "54d82841": {
+    "description": "Identify the continuous single colored inverted U shaped objects, draw a yellow cell at the bottom row at a y coordinate that is the same as the middle coordinate of each object.",
+    "tags": [
+      "object:irregular",
+      "procedure:agentic-program",
+      "procedure:for-each"
+    ]
+  },
+  "54d9e175": {
+    "description": "Find each 3x3 rectangle of the value 0 with a single colored center cell separated by purple lines, and color in the whole 3x3 rectangle the same color, based on the value of the central cells color with the following mapping: blue > teal, green > orange, red > grey, yellow > cyan.",
+    "tags": [
+      "object:multicolor",
+      "object:rectangle",
+      "other:multi-sample-mapping",
+      "procedure:convolutional-program",
+      "object:grid-layouts"
+    ]
+  },
+  "5521c0d9": {},
+  "5582e5ca": {},
+  "5614dbcf": {},
+  "56dc2b01": {
+    "description": "Find the red irregular object, move it towards the green line so that it touches it it, then add a grey line on the other side of the object to the green line that spans the full width or height of the grid with the same orientation as the green line.",
+    "tags": [
+      "transformation:translation",
+      "concept:relative-position",
+      "object:irregular",
+      "concept:adjacency"
+    ]
+  },
+  "56ff96f3": {},
+  "57aa92db": {
+    "description": "Within the multi colored shapes, find the one that is the complete pattern, such that when scaled down to the smallest size possible, it has the most cells overall. It is made of two colors, find its color of which there is only one cell, and then copy this complete pattern to overlap any other cells or rectangles (requiring the pattern to be scaled up) in the grid of the same alignment color, and also changing the color of the other cells in the shape to the color of the cells adjacent to the target alignment cell.",
+    "tags": [
+      "object:irregular",
+      "concept:novel-properties",
+      "procedure:search",
+      "procedure:for-each",
+      "transformation:scaling",
+      "invariance:scale",
+      "procedure:alignment"
+    ]
+  },
+  "5ad4f10b": {
+    "description": "Identify the single large, single colored irregular object, scale it down as small as possible, and change its color to be the color of the many small non background pixels present in the input.",
+    "tags": ["transformation:scaling", "invariance:scale", "object:irregular"]
+  },
+  "5bd6f4ac": {},
+  "5c0a986e": {},
+  "5c2c9af4": {
+    "description": "Find the 3 single colored cells that are in a line. The middle one marks the center of a pattern, the other two mark two of the four corners of a square outline. Complete the outline, then repeatedly draw larger outlines around the center cell, where the distance between consecutive outlines is the same as the distance between the center cell and the first outline.",
+    "tags": [
+      "object:outline",
+      "concept:relative-position",
+      "other:pattern-completion",
+      "procedure:agentic-program"
+    ]
+  },
+  "5daaa586": {},
+  "60b61512": {},
+  "6150a2bd": {},
+  "623ea044": {
+    "description": "Find the single non background cell, and extend diagonal lines out from it in both diagonal directions until the meet the edge of the grid.",
+    "tags": ["object:diagonal-lines", "transformation:draw-lines"]
+  },
+  "62c24649": {},
+  "63613498": {},
+  "6430c8c4": {},
+  "6455b5f5": {
+    "description": "Find the largest and smallest rectangles (including lines) in the input of color 0, and change the color of any rectangles with the same volume as the largest rectangle to blue, and any rectangles with the same volume as the smallest rectangle to grey.",
+    "tags": [
+      "object:rectangle",
+      "procedure:search",
+      "concept:size",
+      "concept:max-min"
+    ]
+  },
+  "662c240a": {},
+  "67385a82": {},
+  "673ef223": {
+    "description": "For each single grey cell, change its color to yellow then draw a grey line to the left or right, depending on which side will result in the line terminating at a green cell.",
+    "tags": [
+      "procedure:for-each",
+      "object:line",
+      "procedure:agentic-program",
+      "transformation:draw-lines"
+    ]
+  },
+  "6773b310": {
+    "description": "The grid is made up of a 3x3 grid of 3x3 cell rectangles. The output is a 3x3 grid, where each cell is blue if the corresponding 3x3 rectangle in the input grid has 2 non background cells in it.",
+    "tags": [
+      "concept:counting",
+      "object:irregular",
+      "concept:containment",
+      "object:grid-layouts"
+    ]
+  },
+  "67a3c6ac": {},
+  "67a423a3": {
+    "description": "Find the intersection point of the two differently colored horizontal and vertical lines, and draw a yellow outline around this cell, overwriting the lines.",
+    "tags": ["object:line", "object:overlapping", "transformation:layering"]
+  },
+  "67e8384a": {
+    "description": "Copy and flip the input grid horizontally to the right, then flip the resulting grid vertically and downwards.",
+    "tags": ["transformation:flipping", "transformation:copy"]
+  },
+  "681b3aeb": {},
+  "6855a6e4": {},
+  "68b16354": {},
+  "694f12f3": {},
+  "6a1e5592": {},
+  "6aa20dc0": {
+    "description": "Find the three colored 3x3 object, then copy it to each other pair of objects if two of its corner colors align with those objects after any combination of rotations or scaling.",
+    "tags": [
+      "procedure:search",
+      "transformation:scaling",
+      "invariance:scale",
+      "transformation:copy",
+      "object:multicolor",
+      "transformation:rotation",
+      "procedure:alignment"
+    ]
+  },
+  "6b9890af": {},
+  "6c434453": {},
+  "6cdd2623": {
+    "description": "Find the color C that is only present in 4 cells in the input, then draw a C line between any pair of horizontally or vertically aligned C colored cells, then remove all other colored cells, replacing them with 0.",
+    "tags": [
+      "procedure:search",
+      "concept:counting",
+      "object:line",
+      "concept:relative-position",
+      "transformation:draw-lines"
+    ]
+  },
+  "6cf79266": {},
+  "6d0160f0": {
+    "description": "The input is made of a 3x grid of 3x3 square separated by pink lines. Find the rectangle that contains a yellow cell, then copy it to the grid position indicated by the position of the yellow cell inside the smaller 3x3 square, then set the color of all other 3x3 rectangles to be 0.",
+    "tags": [
+      "concept:novel-properties",
+      "concept:relative-position",
+      "object:multicolor",
+      "procedure:search",
+      "object:grid-layouts"
+    ]
+  },
+  "6d0aefbc": {
+    "description": "The grid is doubled in width to the right, and the input grid flipped horizontally and copied to the right side of the grid.",
+    "tags": ["transformation:flipping", "transformation:copy"]
+  },
+  "6d58a25d": {},
+  "6d75e8bb": {},
+  "6e02f1e3": {
+    "description": "Count the number of distinct colors in the input, output a 3x3 grid with a single pink row at the top if there is 1 color, a top-left to bottom-right diagonal pink line if there are 2 colors, and a top-right to bottom-left diagonal pink line if there are 3 colors.",
+    "tags": ["concept:counting", "other:multi-sample-mapping"]
+  },
+  "6e19193c": {},
+  "6e82a1ae": {},
+  "6ecd11f4": {},
+  "6f8cd79b": {},
+  "6fa7a44f": {
+    "description": "Extend the grid downwards and double its height, then copy a vertically flipped version of the input grid to the bottom half of the output.",
+    "tags": ["transformation:flipping", "procedure:convolutional-program"]
+  },
+  "72322fa7": {},
+  "72ca375d": {},
+  "73251a56": {
+    "description": "The grids contain a fixed pattern with different color sets, with some missing sections that are filled in with color 0. Fill in the missing sections, using the pattern inferred either from the other training samples, directly, or from the transpose symmetry of the pattern.",
+    "tags": [
+      "other:pattern-completion",
+      "other:multi-sample-mapping",
+      "concept:symmetry"
+    ]
+  },
+  "7447852a": {
+    "description": "The input is formed of several solid (adjacent cell connected) color 0 objects aligned from left to right. From left to right, color the 1st, 4th, 7th, 10th etc objects yellow.",
+    "tags": [
+      "object:irregular",
+      "concept:relative-position",
+      "transformation:recolor"
+    ]
+  },
+  "7468f01a": {
+    "description": "Find the multi colored rectangle shape, flip it horizontally and produce this as the output on a grid of the same size as the rectangle.",
+    "tags": [
+      "transformation:copy",
+      "transformation:flipping",
+      "other:data-dependent-grid",
+      "object:multicolor",
+      "object:rectangle"
+    ]
+  },
+  "746b3537": {
+    "description": "The input is made of N single color solid rectangles of various colors that are aligned vertically or horizontally. The output is a number of cells equal to the number of rectangles in the input, with each output cell representing the color of that rectangle, and aligned in the same direction as the rectangles in the input such that the output is either 1xN or Nx1.",
+    "tags": [
+      "concept:relative-position",
+      "other:data-dependent-grid",
+      "object:rectangle"
+    ]
+  },
+  "74dd1130": {
+    "description": "Transpose (rotate 90 degrees and flip) the input grid along both axes, effectively swapping x and y coordinates.",
+    "tags": ["transformation:flipping", "transformation:rotation"]
+  },
+  "75b8110e": {
+    "description": "The grid is square and made of 4 4x4 squares. Copy the top left yellow square to a 4x4 output grid, then copy the bottom right teal square to the output grid, overwriting any cell values, then the same for the bottom-left blue square, and finally the top-right purple square.",
+    "tags": [
+      "transformation:layering",
+      "transformation:copy",
+      "object:irregular"
+    ]
+  },
+  "760b3cac": {
+    "description": "The input contains two objects, one grey at the top and one yellow at the bottom. Copy and flip the grey object to either the left or right dependent on whether the top left cell or top right cell of the 3x3 yellow object is yellow respectively.",
+    "tags": [
+      "transformation:flipping",
+      "object:irregular",
+      "concept:novel-properties"
+    ]
+  },
+  "776ffc46": {},
+  "77fdfe62": {
+    "description": "Find the central grey colored object in the bounds of a square surrounded by blue lines, for each grey cell, change its color to be the color of the top left grid corner cell if its in the top left quadrant of the central square, and so on for each quadrant, and output this central rectangle.",
+    "tags": [
+      "object:grid-layouts",
+      "other:data-dependent-grid",
+      "transformation:recolor",
+      "concept:relative-position"
+    ]
+  },
+  "780d0b14": {},
+  "7837ac64": {
+    "description": "Identify all sets of 4 same colored cells that are not adjacent and form the corners of a square of variable size. Map each of these as a single cell of the corner color in the output, in their relative positions in the input, and the output grid size is always 3x3.",
+    "tags": [
+      "object:irregular",
+      "object:overlapping",
+      "invariance:scale",
+      "transformation:scaling",
+      "object:grid-layouts"
+    ]
+  },
+  "794b24be": {
+    "description": "Change all blue pixels, and then lay them out in the following order: top-left, top-middle, top-right, middle-middle.",
+    "tags": ["concept:counting"]
+  },
+  "7b6016b9": {},
+  "7b7f7511": {},
+  "7c008303": {},
+  "7ddcd7ec": {
+    "description": "Find the 2x2 colored square, and for each outside corner cell that is also the same color, draw a diagonal line out from the corner in the same direction until the edge of the grid.",
+    "tags": [
+      "object:rectangle",
+      "procedure:agentic-program",
+      "procedure:for-each",
+      "concept:relative-position",
+      "object:diagonal-lines",
+      "transformation:draw-lines"
+    ]
+  },
+  "7df24a62": {},
+  "7e0986d6": {
+    "description": "The grid is composed of single color rectangles with a number of single cells dotted over the top which look like noise. Remove the noise, replacing the cells with either the background 0 color or the color of the rectangles if they are contained within it.",
+    "tags": [
+      "object:overlapping",
+      "concept:containment",
+      "transformation:layering"
+    ]
+  },
+  "7f4411dc": {},
+  "7fe24cdd": {},
+  "80af3007": {},
+  "810b9b61": {
+    "description": "For each shape that is made of a single color and is fully connected, if the shape has the topology of a torus, making a fully connected line around an empty center, change the color of all its cells to red, otherwise leave them as is.",
+    "tags": [
+      "concept:novel-properties",
+      "object:outline",
+      "object:line",
+      "transformation:recolor",
+      "concept:topology"
+    ]
+  },
+  "82819916": {
+    "description": "Find the topmost complete line pattern, then for each incomplete pattern below on the grid, copy the complete pattern to that line, changing its colors using a mapping inferred from the first pixels of the incomplete pattern.",
+    "tags": [
+      "transformation:copy",
+      "object:multicolor",
+      "other:pattern-completion"
+    ]
+  },
+  "83302e8f": {},
+  "834ec97d": {},
+  "8403a5d5": {},
+  "846bdb03": {
+    "description": "Find the 4 yellow cells that make the edges of a rectangle, then copy its bounding box to an output grid of the same size, then find the multi colored irregular object outside of its bounding box, and copy it to the middle of the output grid.",
+    "tags": [
+      "procedure:search",
+      "object:irregular",
+      "object:rectangle",
+      "object:multicolor",
+      "transformation:translation"
+    ]
+  },
+  "855e0971": {},
+  "85c4e7cd": {
+    "description": "Identify the several solid color square outline shapes, and in their natural order based on size, reverse their colors.",
+    "tags": ["object:outline", "transformation:recolor"]
+  },
+  "868de0fa": {
+    "description": "For each blue square outline in the input, fill the inside of the outline with green if the inside shapes width/height is even, and orange if it is odd.",
+    "tags": [
+      "object:outline",
+      "object:rectangle",
+      "concept:containment",
+      "concept:novel-properties"
+    ]
+  },
+  "8731374e": {},
+  "88a10436": {},
+  "88a62173": {},
+  "890034e9": {
+    "description": "Identify the rectangular outline shape of a fixed color, and determine the dimensions of the internal rectangle it outlines of value 0. Find the same 0 valued rectangle elsewhere and add the same colored outline around it.",
+    "tags": [
+      "object:outline",
+      "procedure:search",
+      "transformation:copy",
+      "object:rectangle"
+    ]
+  },
+  "8a004b2b": {},
+  "8be77c9e": {},
+  "8d5021e8": {
+    "description": "Rotate the contents of the 2x3 input by 180 degrees, then double the width to the right, and flip the rotated cells horizontally to fill the new cells (mirroring), then extend the new 4x3 grid down to 4x9, with the middle 4x3 cells containing a vertically flipped copy of the top 4x3 cells, and the bottom 4x3 cells containing an exact copy of the top 4x3 cells.",
+    "tags": ["transformation:flipping", "transformation:rotation"]
+  },
+  "8d510a79": {},
+  "8e1813be": {
+    "description": "Identify the single width lines, ignoring other shapes. For each distinct color line, order the colors from top to bottom or left to right depending on orientation of the lines, then create an output grid of size NxN where N is the number of distinct line colors in the input and draw a line of the same orientation for each color line of length N, preserving their relative order.",
+    "tags": [
+      "object:line",
+      "concept:counting",
+      "object:rectangle",
+      "other:data-dependent-grid",
+      "concept:relative-position",
+      "object:overlapping",
+      "transformation:layering"
+    ]
+  },
+  "8e5a5113": {
+    "description": "Take the leftmost 3x3 square of cells, rotate it 90 degrees clockwise and copy it to the center of the grid, and rotate it another 90 degrees clockwise and copy it to the far right of the grid.",
+    "tags": [
+      "transformation:rotation",
+      "object:multicolor",
+      "transformation:copy",
+      "object:grid-layouts"
+    ]
+  },
+  "8eb1be9a": {},
+  "8efcae92": {
+    "description": "Find the two colored rectangle that contains the highest number of green cells inside it, and extract it as the input.",
+    "tags": [
+      "concept:counting",
+      "concept:containment",
+      "object:multicolor",
+      "transformation:copy",
+      "procedure:search",
+      "concept:max-min"
+    ]
+  },
+  "8f2ea7aa": {
+    "description": "Find the irregular, discontinuous 3x3 object, scale it up 3x to fill the entire grid, then replace each solid 3x3 square resulting from the scaled up input with the input itself, and leave all other values as 0.",
+    "tags": ["object:irregular", "transformation:scaling"]
+  },
+  "90c28cc7": {
+    "description": "In the input there is a large multi colored rectangle made of other colored rectangles that are aligned in a grid shape. For each cell in the larger grid shape, output a single cell in the output in the same relative position as that grid cell and of the same color, where the width and height of the output is the same as the grid.",
+    "tags": [
+      "object:rectangle",
+      "object:grid-layouts",
+      "other:data-dependent-grid",
+      "concept:relative-position"
+    ]
+  },
+  "90f3ed37": {
+    "description": "Identify the top-most complete pattern/object that extends the full width of the grid, then for each incomplete pattern below that starts on the left, overlay the complete pattern and change the cell values to blue for any cells that were in the complete pattern but not in the incomplete one, which stay as grey.",
+    "tags": [
+      "object:irregular",
+      "transformation:layering",
+      "transformation:recolor"
+    ]
+  },
+  "913fb3ed": {
+    "description": "For each single non-background colored cell in the grid, draw an outline around it of a color depending on the pixel color, with the following mappings: red > teal, grey > yellow, green > blue.",
+    "tags": ["procedure:convolutional-program", "other:multi-sample-mapping"]
+  },
+  "91413438": {},
+  "91714a58": {
+    "description": "Change the color of any cells that aren't part of a 2x2 or larger rectangle of the same color to the background 0 color.",
+    "tags": ["procedure:convolutional-program", "object:rectangle"]
+  },
+  "9172f3a0": {},
+  "928ad970": {
+    "description": "Draw a rectangle outline that is the largest possible outline that fits inside the 4 pink cells in the input, using the color of the one other outline rectangle in the input.",
+    "tags": ["object:outline", "procedure:search", "concept:containment"]
+  },
+  "93b581b8": {},
+  "941d9a10": {},
+  "94f9d214": {},
+  "952a094c": {},
+  "9565186b": {},
+  "95990924": {
+    "description": "Draw a fixed pattern around the purple 2x2 squares, with a blue cell to the top left, green top right, red bottom left, yellow bottom right.",
+    "tags": ["procedure:convolutional-program", "object:rectangle"]
+  },
+  "963e52fc": {
+    "description": "Double the width of the grid to the right, then for each row, continue the simple repeating left to right pattern.",
+    "tags": ["other:pattern-completion", "transformation:copy"]
+  },
+  "97999447": {},
+  "97a05b5b": {},
+  "98cf29f8": {},
+  "995c5fa3": {
+    "description": "The input contains 3 pink 4x4 objects of different shapes, each shape maps to a color, with the solid square mapping to green, the torus shape mapping to grey, and the irregular but not a torus shape mapping to yellow. Going through the objects from left to right, in a 3x3 output grid draw a 3x1 line from top to bottom of the output that is colored according to the shape to color mapping.",
+    "tags": [
+      "object:irregular",
+      "concept:novel-properties",
+      "other:multi-sample-mapping",
+      "concept:topology"
+    ]
+  },
+  "99b1bc43": {},
+  "99fa7670": {},
+  "9aec4887": {
+    "description": "Move the grey irregular shape inside the multi-colored square outline, then for each grey square that is touching either the single middle or two middle cells of the colored square outline segments, change it's color to that edges color.",
+    "tags": [
+      "transformation:copy",
+      "object:line",
+      "object:multicolor",
+      "object:irregular",
+      "other:data-dependent-grid",
+      "transformation:translation",
+      "transformation:recolor",
+      "concept:containment"
+    ]
+  },
+  "9af7a82c": {
+    "description": "Count the number of cells of each color present in the input grid, then create an output grid that has a width equal to the number of distinct colors and a height equal to the maximum number of cells of any one color, then in order of colors from the one with the most cells to the least, draw vertical lines of that color aligned to the top edge, with the length of each line equal to the number of cells of that color - from left to right.",
+    "tags": [
+      "object:irregular",
+      "procedure:ordering",
+      "concept:counting",
+      "other:data-dependent-grid",
+      "concept:max-min"
+    ]
+  },
+  "9d9215db": {
+    "description": "Find the foreground pattern in one of the corners, and reflect it along one or both axes into each of the other corners of the grid. Then, for the cell color in the pattern that has two cells that are pointing toward each adjacent corner, repeat that cell along a line to each corner at every other cell.",
+    "tags": [
+      "object:irregular",
+      "object:multicolor",
+      "transformation:flipping",
+      "concept:symmetry"
+    ]
+  },
+  "9dfd6313": {},
+  "9ecd008a": {
+    "description": "Infer the pattern which is symmetrical across both axes, then find the 3x3 zero valued rectangle, and return the cells that should be in the rectangle from the pattern.",
+    "tags": [
+      "other:pattern-completion",
+      "transformation:copy",
+      "object:rectangle",
+      "transformation:flipping",
+      "concept:symmetry"
+    ]
+  },
+  "9edfc990": {},
+  "9f236235": {
+    "description": "Find all grey lines and remove their rows or columns entirely from the grid, shifting all cells and reducing the grid height/width by 1, then scale down the grid by a scale factor determined by the width and height of the largest non zero square in the input.",
+    "tags": [
+      "transformation:scaling",
+      "object:overlapping",
+      "object:irregular",
+      "transformation:flipping",
+      "invariance:scale",
+      "object:grid-layouts"
+    ]
+  },
+  "a1570a43": {},
+  "a2fd1cf0": {
+    "description": "Starting at the single green cell, draw a grey line horizontally in the direction of the single other red cell until it aligns vertically with the red cell, then at the red cell draw a grey line vertically in the direction of the green cell until it aligns horizontally with the green cell.",
+    "tags": [
+      "object:line",
+      "procedure:agentic-program",
+      "concept:relative-position",
+      "transformation:draw-lines"
+    ]
+  },
+  "a3325580": {
+    "description": "Identify the irregular objects of a single color, find the maximum number of cells of any of these objects, then for each of the objects from left to right, turn them into a vertical line of a length equal to the number of pixels, and place these lines on an output grid from left to right on a grid with a width equal to the number of objects with the number cells equal to the maximum cells in any object, and a height equal to the maximum number of cells in any object.",
+    "tags": [
+      "object:irregular",
+      "concept:counting",
+      "procedure:for-each",
+      "object:line",
+      "concept:relative-position",
+      "other:data-dependent-grid",
+      "concept:max-min"
+    ]
+  },
+  "a3df8b1e": {},
+  "a416b8f3": {
+    "description": "Double the width of the grid to the right, and copy all the input grid cells as is to the right half.",
+    "tags": ["transformation:copy"]
+  },
+  "a48eeaf7": {},
+  "a5313dff": {},
+  "a5f85a15": {},
+  "a61ba2ce": {},
+  "a61f2674": {},
+  "a64e4611": {
+    "description": "Identify the smallest possible number of overlapping rectangles that cover only background (0) cells and each have at least one edge that is fully touching the edge of the grid. Reduce the size of the rectangles by 1 in each direction except the direction that touches the edge, and then color all these cells red.",
+    "tags": ["object:rectangle", "procedure:search"]
+  },
+  "a65b410d": {
+    "description": "Find the green horizontal line, repeatedly draw red lines on each row above it, with the width increasing by 1 for each row above and always aligned to the left of the grid, and then draw blue left-aligned lines on each row below the green line, with the width of the line reducing by 1 for each row below.",
+    "tags": ["object:line", "procedure:agentic-program"]
+  },
+  "a68b268e": {},
+  "a699fb00": {},
+  "a740d043": {
+    "description": "Extract the bounding box of the non background/blue colored cells, and replace all blue cells with value 0.",
+    "tags": [
+      "object:multicolor",
+      "object:irregular",
+      "transformation:copy",
+      "other:data-dependent-grid"
+    ]
+  },
+  "a78176bb": {},
+  "a79310a0": {},
+  "a85d4709": {},
+  "a87f7484": {
+    "description": "The input is made up of a number of 3x3 single colored objects, find the object with the most non background colored cells, and output its bounding square.",
+    "tags": [
+      "object:irregular",
+      "concept:counting",
+      "procedure:search",
+      "concept:novel-properties",
+      "transformation:copy"
+    ]
+  },
+  "a8c38be5": {
+    "description": "The input grid contains 9 3x3 squares formed of pink and one other color that can be translated onto a 9x9 grid to form a fixed symmetrical pattern of pink cells in the middle, which can be placed following a rule such that the majority of pink cells are closest to the middle of the output grid, with the central 3x3 block of the output always the solid pink square.",
+    "tags": [
+      "object:rectangle",
+      "object:multicolor",
+      "procedure:search",
+      "transformation:translation",
+      "concept:novel-properties",
+      "concept:symmetry"
+    ]
+  },
+  "a8d7556c": {
+    "description": "For any zero valued rectangle that is at least 2x2 in the input, change its color to green.",
+    "tags": ["procedure:search", "transformation:recolor", "object:rectangle"]
+  },
+  "a9f96cdd": {
+    "description": "Draw a fixed pattern around the green cells, ignoring any cells that go outside the grid, remove the green cells afterwards, with a red cell top left, teal top right, grey bottom left, orange bottom right of the original green cell.",
+    "tags": ["procedure:convolutional-program"]
+  },
+  "aabf363d": {
+    "description": "Determine the color C of the cell of which there is only one of that color, then color the other larger object the color C, then remove the original single color C cell.",
+    "tags": ["transformation:recolor", "procedure:search"]
+  },
+  "aba27056": {
+    "description": "Find the single colored outline shape with an open edge, fill the shape with yellow, including the open edge that has color 0 values, then extend this colored edge line out and way from the object to the edge of the grid, then draw diagonal lines away from the object, starting at the two cells that mark the inside ends of the opening in the original shape.",
+    "tags": [
+      "object:outline",
+      "invariance:orientation",
+      "object:line",
+      "procedure:agentic-program",
+      "object:diagonal-lines",
+      "transformation:draw-lines"
+    ]
+  },
+  "ac0a08a4": {
+    "description": "Scale the grid along both axes by the number of distinctly colored non-background cells.",
+    "tags": [
+      "transformation:scaling",
+      "concept:counting",
+      "other:data-dependent-grid"
+    ]
+  },
+  "ae3edfdc": {
+    "description": "Move all red cells towards the green cell along a straight line until they touch the green cell, and do the same for all orange cells, moving them towards the blue cell.",
+    "tags": ["object:irregular", "object:multicolor", "concept:adjacency"]
+  },
+  "ae4f1146": {
+    "description": "Find the 3x3 object with the most blue cells and copy it as the output.",
+    "tags": [
+      "transformation:copy",
+      "object:multicolor",
+      "concept:counting",
+      "procedure:search"
+    ]
+  },
+  "aedd82e4": {
+    "description": "Find the most common non background color in the input, and change the color of all non background colored cells to that color.",
+    "tags": ["concept:counting", "transformation:recolor"]
+  },
+  "af902bf9": {},
+  "b0c4d837": {},
+  "b190f7f5": {
+    "description": "The input contains a grey irregular pattern and a multi colored irregular pattern. Scale the the multi colored pattern by x where x is the width and height of the pattern, to produce a new output grid, then replace each solid colored square resulting from scaling with the grey pattern from the input, changing its color to that of the colored square.",
+    "tags": ["object:irregular", "transformation:scaling", "object:multicolor"]
+  },
+  "b1948b0a": {
+    "description": "Change all blue cells to green.",
+    "tags": ["transformation:recolor", "procedure:convolutional-program"]
+  },
+  "b230c067": {},
+  "b27ca6d3": {
+    "description": "Draw a red outline around any horizontally or vertically connected 2 green cells.",
+    "tags": [
+      "object:outline",
+      "procedure:convolutional-program",
+      "rotation-invariance"
+    ]
+  },
+  "b2862040": {},
+  "b527c5c6": {
+    "description": "For each red rectangle with a single green cell on one edge, draw a line from the green cell away from the object to the edge of the grid, then on either side of the green line fill in N red colored cells where N is one less than the smallest of the width or height of the red rectangle the green cell was part of.",
+    "tags": [
+      "invariance:orientation",
+      "object:line",
+      "concept:novel-properties",
+      "procedure:for-each",
+      "transformation:draw-lines"
+    ]
+  },
+  "b548a754": {},
+  "b60334d2": {
+    "description": "For each purple cell, replace it with a pattern (that is best described by the training data).",
+    "tags": ["procedure:convolutional-program"]
+  },
+  "b6afb2da": {
+    "description": "For each purple rectangle in the input, fill it with green, change the non-corner edge cells to yellow, and change the corner cells to blue.",
+    "tags": [
+      "transformation:recolor",
+      "object:rectangle",
+      "procedure:convolutional-program"
+    ]
+  },
+  "b7249182": {},
+  "b775ac94": {},
+  "b782dc8a": {
+    "description": "Find the starting cell in the maze, which will be the cell for which there is only one of that color. Expand from the starting cell in all directions, alternating between the starting cell color and color of the non grey cells surrounding it, only overwriting 0 cells until no more cells can be written.",
+    "tags": ["procedure:agentic-program", "transformation:filling"]
+  },
+  "b8825c91": {},
+  "b8cdaf2b": {},
+  "b91ae062": {},
+  "b94a9452": {
+    "description": "Extract the multi colored square from the input as the output, and swap the two different colors used.",
+    "tags": [
+      "object:multicolor",
+      "other:data-dependent-grid",
+      "object:rectangle"
+    ]
+  },
+  "b9b7f026": {
+    "description": "Find the single colored shape that is topologically a torus (has a hole in it), and output a single cell of that shapes color on a grid size 1x1.",
+    "tags": [
+      "procedure:search",
+      "object:outline",
+      "object:rectangle",
+      "concept:containment",
+      "concept:topology"
+    ]
+  },
+  "ba26e723": {
+    "description": "Change the color of the non 0 colored cells on the 1st, 4th, 7th, 10th etc columns to be blue.",
+    "tags": ["transformation:recolor"]
+  },
+  "ba97ae07": {},
+  "bb43febb": {},
+  "bbc9ae5d": {
+    "description": "The starting pattern is made of a single line with segment one color of a given length, and the rest the background color 0. Find the overall width of the input grid, half it, then repeat the input line that many times downwards, starting with the same identical first row, then on on each line making the first foreground segment of the line one pixel longer.",
+    "tags": ["other:multi-sample-mapping"]
+  },
+  "bc1d5164": {},
+  "bd4472b8": {},
+  "bda2d7a6": {},
+  "bdad9b1f": {},
+  "be94b721": {
+    "description": "Extract the bounding box of the single colored irregular shape with the most total cells as the output grid.",
+    "tags": [
+      "concept:novel-properties",
+      "procedure:search",
+      "concept:counting",
+      "transformation:copy",
+      "concept:size"
+    ]
+  },
+  "beb8660c": {},
+  "c0f76784": {},
+  "c1d99e64": {
+    "description": "Color in any lines of cells of value 0 that extend all the way either horizontally or vertically between both edges of the grid - green.",
+    "tags": ["object:line"]
+  },
+  "c3e719e8": {
+    "description": "Find the most common cell color, take all cells in the input of this color and then scale them in both axes by a factor of 3 to produce a 9x9 grid, then replace each 3x3 solid color square in the grid with the original input grid.",
+    "tags": [
+      "concept:counting",
+      "transformation:scaling",
+      "object:multicolor",
+      "transformation:copy"
+    ]
+  },
+  "c3f564a4": {
+    "description": "Extend all bottom-left to top-right diagonal single colored lines over any 0 colored cells in the input to complete the pattern.",
+    "tags": ["other:pattern-completion"]
+  },
+  "c444b776": {
+    "description": "Find the square with a background of zero and with several other colored cells inside it. Copy this square to all other solid background color squares of the same size.",
+    "tags": [
+      "transformation:copy",
+      "object:multicolor",
+      "object:grid-layouts",
+      "concept:containment"
+    ]
+  },
+  "c59eb873": {},
+  "c8cbb738": {
+    "description": "For each non background color, copy them in their relative positions to the center of a new grid whose size is equal to the largest containing rectangle of any of the non background colors on the original grid.",
+    "tags": ["object:overlapping", "transformation:copy", "object:irregular"]
+  },
+  "c8f0f002": {
+    "description": "Swap the color of orange and pink cells.",
+    "tags": ["procedure:convolutional-program", "transformation:recolor"]
+  },
+  "c909285e": {},
+  "c9e6f938": {},
+  "c9f8e694": {},
+  "caa06a1f": {},
+  "cbded52d": {
+    "description": "For each non blue and non background color, draw a cell of the same color between any two cells of that color that have the same x or y coordinate.",
+    "tags": ["object:multicolor", "object:overlapping", "object:grid-layouts"]
+  },
+  "cce03e0d": {},
+  "cdecee7f": {},
+  "ce22a75a": {
+    "description": "Replace each pink cell with a 3x3 blue square centered on the pink cell.",
+    "tags": [
+      "procedure:alignment",
+      "object:rectangle",
+      "procedure:for-each",
+      "procedure:convolutional-program"
+    ]
+  },
+  "ce4f8723": {
+    "description": "The input is formed of 2 4x4 grids separated by a yellow horizontal line, take each 4x4 grid, change the color of all non 0 cells to red, and then overlap the two 4x4 grids so that a cell is red if it is red in either of the 2 grids, outputting a 4x4 grid.",
+    "tags": ["transformation:layering", "object:irregular"]
+  },
+  "ce602527": {
+    "description": "The input is formed of two smaller (single cell line thickness) irregular single colored objects, and one larger double cell thickness single colored object that may be be partially off grid. Determine which of the smaller objects the larger object is a 2x scaled and recolored copy of, and output the contents of the bounding rectangle of this smaller object.",
+    "tags": [
+      "object:irregular",
+      "transformation:scaling",
+      "concept:novel-properties",
+      "concept:relative-position",
+      "other:data-dependent-grid",
+      "procedure:search",
+      "transformation:copy",
+      "invariance:scale"
+    ]
+  },
+  "ce9e57f2": {
+    "description": "For each vertical green line, replace the bottom half of cells (not including the middle cell if odd) with grey.",
+    "tags": ["concept:counting", "object:line", "transformation:recolor"]
+  },
+  "cf98881b": {},
+  "d037b0a7": {
+    "description": "For each column in the 3x3 input, color any 0 colored cells below a non 0 colored cell the same color as that cell.",
+    "tags": ["transformation:recolor"]
+  },
+  "d06dbe63": {
+    "description": "From the single grey pixel, draw two purple lines from it, one that repeatedly goes up 2 then right 2 and repeats this pattern, and another that goes down 2 and left 2 and repeats, both until the edge of the grid.",
+    "tags": ["other:pattern-completion", "procedure:agentic-program"]
+  },
+  "d07ae81c": {
+    "description": "The grid is made from large rectangular shapes of 2 colors, and within them there are single cells of two different colors that we will call A and B. For each individual cell of color A, draw diagonal lines out in each direction, using color A when the line is contained within a rectangle of the same color as the one the starting cell is in, and color B when it's not. Do the same but reversed for individual color B cells.",
+    "tags": [
+      "transformation:layering",
+      "procedure:agentic-program",
+      "object:diagonal-lines",
+      "transformation:draw-lines"
+    ]
+  },
+  "d0f5fe59": {},
+  "d10ecb37": {
+    "description": "Copy the top left 2x2 cell square in the input as the output.",
+    "tags": ["transformation:copy"]
+  },
+  "d13f3404": {},
+  "d22278a0": {
+    "description": "For each corner of the grid, if there is a non background colored cell, start drawing out a pattern around it consisting of repeated square outlines each of a width 4 more than the previous outline (alternating lines). Corners with colored cells in parallel, only drawing the pattern on cells whose closest colored corner cell is the one that the pattern emerged from as measured by the manhattan distance.",
+    "tags": ["procedure:agentic-program", "concept:relative-position"]
+  },
+  "d23f8c26": {},
+  "d2abd087": {},
+  "d364b489": {
+    "description": "The cell directly to the left of any blue cell becomes orange, above becomes green, right becomes teal, and below becomes grey.",
+    "tags": ["procedure:convolutional-program"]
+  },
+  "d406998b": {},
+  "d43fd935": {},
+  "d4469b4b": {
+    "description": "If the only other non background 0 color cells in the input are green, output a 3x3 output with a fixed pink T pattern, if it's blue then a plus / + shape in the 3x3 output, otherwise a pink right angled line along the right and bottom edges in the output.",
+    "tags": ["other:multi-sample-mapping"]
+  },
+  "d4a91cb9": {
+    "description": "Draw a right angled line between the green and grey cells, with the orientation such that it meets the green cell horizontally and the grey line vertically, so it emerges from the green pixel horizontally moving in the left/right direction of the grey cell, until it has the same x coordinate as the grey pixel, then moving vertically toward the grey pixel.",
+    "tags": [
+      "object:line",
+      "procedure:agentic-program",
+      "transformation:draw-lines"
+    ]
+  },
+  "d4f3cd78": {},
+  "d511f180": {
+    "description": "Replace all pink cells with grey and all grey cells with pink.",
+    "tags": ["procedure:convolutional-program"]
+  },
+  "d5d6de2d": {},
+  "d631b094": {
+    "description": "Count the number of non zero input cells and output a grid of the same color as those cells with a height of 1 and a width of the number of cells counted.",
+    "tags": ["concept:counting"]
+  },
+  "d687bc17": {
+    "description": "For each single color cell in the middle of the input (non edge cells), move the cell in a single direction towards the edge that is made of a line of the same color as the cell.",
+    "tags": [
+      "procedure:for-each",
+      "concept:adjacency",
+      "procedure:agentic-program",
+      "concept:relative-position",
+      "object:line",
+      "transformation:translation"
+    ]
+  },
+  "d6ad076f": {
+    "description": "Draw a grey rectangle between the two colored rectangles in the input, such that its size in the direction between the two rectangles is the same as the gap, and it's width is 2 less than the height (if the rectangles are to the left and right of each other) or width (if the rectangles are above and below each other) of the smallest rectangle.",
+    "tags": ["object:rectangle", "concept:relative-position"]
+  },
+  "d89b689b": {},
+  "d8c310e9": {
+    "description": "Find the repeating left to right pattern for each row in the left half of the grid, and repeat it into the right half.",
+    "tags": ["other:pattern-completion"]
+  },
+  "d90796e8": {},
+  "d9f24cd1": {
+    "description": "Draw a line directly upwards from each green cell at the bottom of the grid. If the line encounters a purple cell, draw a green cell to the right and then continue the line upwards.",
+    "tags": ["procedure:agentic-program", "transformation:draw-lines"]
+  },
+  "d9fac9be": {},
+  "dae9d2b5": {
+    "description": "Convert all non background cells to color blue, then take the left and right 3x3 parts of the 6x3 input, overlay them so that any cell is blue if either of the input cells is blue, and output the resulting 3x3 grid.",
+    "tags": [
+      "transformation:copy",
+      "procedure:convolutional-program",
+      "transformation:layering",
+      "transformation:recolor"
+    ]
+  },
+  "db3e9e38": {
+    "description": "Find the orange line, then in the left and right directions draw a grey line that is one cell shorter than the starting line and aligned to the top, then repeat this procedure alternating between grey and orange colors until the height of the line is just 1 in both directions, keeping the same grid size.",
+    "tags": ["procedure:agentic-program", "object:line"]
+  },
+  "db93a21d": {
+    "description": "For each teal square, create a blue rectangle below it of the same width as the square and extending to the bottom of the grid, then for each square again, draw a red outline around it with a thickness that is half the width/height of the square, on top of any of the previously drawn blue rectangles.",
+    "tags": [
+      "object:rectangle",
+      "transformation:layering",
+      "transformation:scaling",
+      "invariance:scale"
+    ]
+  },
+  "dbc1a6ce": {},
+  "dc0a314f": {
+    "description": "Ignoring the red square, infer the rest of the symmetrical pattern along both axes, and then determine what the cells in the red rectangle should be. Alternatively, take the bounding box of the red rectangle, flip it's coordinates horizontally and vertically, then extract the pixels from the input in that bounding box, and flip the horizontally and vertically again.",
+    "tags": [
+      "object:rectangle",
+      "other:pattern-completion",
+      "transformation:flipping",
+      "concept:symmetry"
+    ]
+  },
+  "dc1df850": {
+    "description": "All the cells that are next to (either horizontally, vertically, or diagonally) a green cell become blue.",
+    "tags": ["procedure:convolutional-program"]
+  },
+  "dc433765": {},
+  "ddf7fa4f": {},
+  "de1cd16c": {
+    "description": "Output a single cell grid whose color is that of the rectangle in the input that contains the largest number of single differently colored cells.",
+    "tags": [
+      "concept:containment",
+      "concept:counting",
+      "object:multicolor",
+      "object:rectangle"
+    ]
+  },
+  "ded97339": {
+    "description": "Draw a grey line between any two grey cells that are either horizontally or vertically aligned.",
+    "tags": ["procedure:search", "object:line", "transformation:draw-lines"]
+  },
+  "e179c5f4": {
+    "description": "Starting at the single blue cell, draw a line diagonally up and right until the edge of the grid, then diagonally up and left to the edge of the grid, repeating until the top of the grid, and color all remaining 0 colored cells grey.",
+    "tags": ["procedure:agentic-program", "transformation:recolor"]
+  },
+  "e21d9049": {},
+  "e26a3af2": {},
+  "e3497940": {},
+  "e40b9e2f": {
+    "description": "Find the multi colored object, and identify the center cell or cells such that rotating the object around this center at 90, 180, and 270 degrees will align it with all other non 0 color cells, then perform the rotations and overlay the cells onto the grid.",
+    "tags": [
+      "transformation:rotation",
+      "concept:novel-properties",
+      "procedure:search",
+      "procedure:alignment"
+    ]
+  },
+  "e48d4e1a": {},
+  "e5062a87": {},
+  "e509e548": {
+    "description": "For each single colored irregular object, determine if it contains any T corners, and how many right-angled corners it has. If it has a T corner and a right angled corner, recolor the object green, if it has two right angled corners, color it teal, if it has one right angled corned, color it in blue.",
+    "tags": [
+      "object:irregular",
+      "concept:novel-properties",
+      "transformation:recolor"
+    ]
+  },
+  "e50d258f": {},
+  "e6721834": {
+    "description": "The input grid is split into two halves horizontally or vertically, with one half containing some multi-colored rectangular objects, and the other half containing single colored sets of cells that partially match the rectangular objects in the other other. Copy the complete patterns to the other half so that they align over the top of the single colored cell sets, and take that other half as the output.",
+    "tags": [
+      "procedure:search",
+      "procedure:for-each",
+      "object:multicolor",
+      "procedure:alignment",
+      "transformation:copy",
+      "invariance:orientation"
+    ]
+  },
+  "e73095fd": {},
+  "e76a88a6": {},
+  "e8593010": {
+    "description": "For each 0 colored irregular but directly connected (no diagonals) shape in the input, color it red if its a single cell, green if it is 2 adjacent cells, and blue if it is 3 connected cells.",
+    "tags": [
+      "concept:counting",
+      "procedure:for-each",
+      "concept:novel-properties",
+      "transformation:recolor",
+      "procedure:convolutional-program"
+    ]
+  },
+  "e8dc4411": {},
+  "e9614598": {},
+  "e98196ab": {},
+  "e9afcf9a": {},
+  "ea32f347": {
+    "description": "The input is formed of 3 pink lines in both orientations, color the shortest of these lines green, the longest blue, and the middle length one yellow.",
+    "tags": [
+      "object:line",
+      "invariance:orientation",
+      "transformation:recolor",
+      "procedure:ordering",
+      "concept:counting",
+      "concept:size"
+    ]
+  },
+  "ea786f4a": {
+    "description": "Draw a color 0 diagonal line from the top-left to bottom right corner of the grid, and also from the bottom-left to top-right corner of the grid.",
+    "tags": ["object:diagonal-lines", "transformation:draw-lines"]
+  },
+  "eb281b96": {},
+  "eb5a1d5d": {},
+  "ec883f72": {},
+  "ecdecbb3": {
+    "description": "From each green cell, draw a green line from that cell in any direction where it would run into a grey pixel, and overwrite that grey pixel with green. Then at any green cell that is the end of any green line and is also intersected by a grey line, surround that cell with grey cells including diagonally.",
+    "tags": [
+      "procedure:agentic-program",
+      "object:line",
+      "transformation:draw-lines"
+    ]
+  },
+  "ed36ccf7": {},
+  "ef135b50": {},
+  "f15e1fac": {
+    "description": "For each grey pixel, draw a line down or right depending on of the green cells in the input are on the left/right or top/bottom respectively. When drawing each line, if drawing a cell on a row or column with a green cell, move the cell away from that green cell (in the opposite direction) one cell, and then continue drawing the line.",
+    "tags": [
+      "procedure:for-each",
+      "invariance:orientation",
+      "object:line",
+      "procedure:agentic-program",
+      "concept:relative-position",
+      "transformation:draw-lines",
+      "transformation:translation"
+    ]
+  },
+  "f1cefba8": {
+    "description": "The input contains a larger rectangle of color c with a smaller rectangle of color d inside it, with a number of single color d cells around the edge of the inner rectangle but inside of the larger rectangle. For each of these single cells along the left or right edge, along the line where the y coordinate of the cell is, change any of the inner rectangles d colored pixels to c, and any of the pixels outside of the larger rectangle along this line to color d. Do they same thing vertically for cells along the top or bottom edge.",
+    "tags": [
+      "object:line",
+      "object:rectangle",
+      "concept:containment",
+      "transformation:layering",
+      "transformation:draw-lines"
+    ]
+  },
+  "f25fbde4": {},
+  "f25ffba3": {
+    "description": "Flip the bottom half of the grid vertically and copy it to the top half.",
+    "tags": ["transformation:flipping"]
+  },
+  "f2829549": {},
+  "f35d900a": {
+    "description": "The input is formed of 4 colored cells that make up the edges of a rectangle. From each corner, along each edge draw a pattern of alternating 0 color and pink color cells until the middle point of each each edge. Then surround each corner cell will a an outline that is the color of the adjacent corner cells.",
+    "tags": [
+      "object:line",
+      "procedure:agentic-program",
+      "procedure:for-each",
+      "concept:relative-position"
+    ]
+  },
+  "f5b8619d": {},
+  "f76d97a5": {},
+  "f8a8fe49": {},
+  "f8b3ba0a": {},
+  "f8c80d96": {
+    "description": "The grid starts with a pattern made of square outlines centered around a specific point, with each outline being 2 or 3 or possibly more pixels out from the previous one. Determine the gap between lines and repeat the pattern, then change all other cells to pink instead of 0.",
+    "tags": [
+      "other:pattern-completion",
+      "object:outline",
+      "transformation:scaling",
+      "transformation:filling"
+    ]
+  },
+  "f8ff0b80": {},
+  "f9012d9b": {
+    "description": "Infer the pattern such that the missing cells in the input with value 0 can be determined. The output is the value of the missing cells only and the same size as the single rectangular 0 colored block in the input.",
+    "tags": ["other:pattern-completion", "transformation:copy"]
+  },
+  "fafffa47": {},
+  "fcb5c309": {
+    "description": "Find the largest rectangle outline object, or the one that contains the most non background colored cells, and copy it and it's contents to the output, changing the color of all cells that are non zero to be the color of the non zero cells that are inside the outline.",
+    "tags": [
+      "object:outline",
+      "transformation:copy",
+      "concept:containment",
+      "procedure:search",
+      "other:data-dependent-grid",
+      "concept:counting",
+      "transformation:recolor"
+    ]
+  },
+  "fcc82909": {},
+  "feca6190": {
+    "description": "Count the number of distinct non background colors in the input as C, then create an output grid of width and height 5xC, then copy the input 5x1 grid to the bottom left corner, then repeat it diagonally up and right until the top row.",
+    "tags": [
+      "concept:counting",
+      "procedure:agentic-program",
+      "other:data-dependent-grid",
+      "object:diagonal-lines",
+      "transformation:draw-lines"
+    ]
+  },
+  "ff28f65a": {
+    "description": "Count the number green 2x2 squares in the input, and draw the corresponding number of blue cells onto a 3x3 output grid in the following order of positions - top-left, top-right, middle-middle, bottom-left, bottom-right.",
+    "tags": [
+      "concept:counting",
+      "object:rectangle",
+      "other:multi-sample-mapping"
+    ]
+  },
+  "ff805c23": {}
+}
